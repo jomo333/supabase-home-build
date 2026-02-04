@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Palette MonProjetMaison - Bleu Marine & Gris */
+    --background: 210 20% 98%;
+    --foreground: 210 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 15%;
+
+    /* Bleu marine profond - Couleur principale du logo */
+    --primary: 210 60% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Gris doux - Complémentaire */
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 210 50% 15%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Bleu marine clair - Accent */
+    --accent: 210 55% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Succès - Vert */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Orange */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 55% 35%;
+
+    --radius: 0.75rem;
+
+    /* Gradients - Bleu marine */
+    --gradient-hero: linear-gradient(135deg, hsl(210 60% 20%) 0%, hsl(210 55% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 55% 35%) 0%, hsl(210 50% 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(152 71% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-accent: 0 10px 30px -10px hsl(210 55% 35% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 210 15% 30%;
+    --sidebar-primary: 210 60% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 95%;
+    --sidebar-accent-foreground: 210 60% 25%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 210 55% 35%;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 40% 85%;
+    --primary-foreground: 210 50% 12%;
+
+    --secondary: 210 50% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 210 50% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 210 55% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 50% 18%;
+    --input: 210 50% 18%;
+    --ring: 210 55% 50%;
+
+    --sidebar-background: 210 50% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 50% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 210 50% 15%;
+    --sidebar-ring: 210 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .bg-success-gradient {
+    background: var(--gradient-success);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
